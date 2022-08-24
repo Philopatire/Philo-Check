@@ -1,0 +1,301 @@
+:root {
+  --main-color: #e91e63;
+  --main-color-alt: #a11343;
+}
+* {
+  font-family: "Roboto", sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+}
+body {
+  margin-top: 35px;
+  background-color: #ececec;
+}
+span {
+  display: inline-block;
+}
+.page-holder {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+}
+.meters::-webkit-scrollbar,
+.list::-webkit-scrollbar {
+  width: 10px;
+}
+.meters::-webkit-scrollbar-thumb,
+.list::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 20px;
+}
+.meters::-webkit-scrollbar-thumb:hover,
+.list::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+.meters {
+  flex-grow: 1;
+  max-height: calc(100vh - 50px);
+  padding-left: 10px;
+  overflow-y: auto;
+  direction: rtl;
+}
+.meters .content {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  direction: ltr;
+}
+.list {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  min-width: 350px;
+  border-radius: 35px 0px 0px 0px;
+  height: calc(100vh - 50px);
+  max-height: calc(100vh - 50px);
+  background-color: #fff;
+  border: 1px solid #f3f6fa;
+  overflow-y: auto;
+  position: relative;
+}
+@media (max-width: 540px) {
+  .list {
+    width: 100%;
+    border-radius: 0;
+    margin-top: 0;
+    order: 1;
+  }
+}
+.list .header {
+  background-color: #fbfbff;
+  border-bottom: 1px solid #f3f6fa;
+  padding: 30px 25px 20px;
+  position: relative;
+  border-radius: inherit;
+  position: sticky;
+  top: 0;
+  z-index: 6;
+}
+.list .header .inline {
+  display: flex;
+  align-items: center;
+}
+.list .header span.day,
+.list .header span.num-day {
+  color: #666afb;
+  font-size: 25px;
+}
+.list .header span.day {
+  font-weight: 500;
+  margin-right: 5px;
+}
+.list .header span.month {
+  display: block;
+  margin-top: 5px;
+  color: #ada4a4;
+  font-size: 17px;
+}
+.list .header span.tasks {
+  margin-left: auto;
+  color: #ada4a4;
+  font-weight: 500;
+}
+.list .header span.tasks::after {
+  content: " tasks";
+}
+.list .header button#plusTasks {
+  background-color: var(--main-color);
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 20px;
+  color: #fff;
+  position: absolute;
+  bottom: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  cursor: pointer;
+  z-index: 10;
+  transition: 0.5s;
+}
+.list .header button#plusTasks:hover {
+  background-color: var(--main-color-alt);
+}
+.list .header .change-day {
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.list .header .change-day button {
+  background-color: transparent;
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+  width: 50px;
+}
+.list .item {
+  padding: 30px 25px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+  border-bottom: 1px solid #f3f6fa;
+  background-color: #fff;
+  transition: 0.5s;
+  height: 80px;
+}
+.list .item:hover {
+  background-color: #fbfbff;
+}
+.list .item .bar {
+  color: transparent;
+  opacity: 0;
+  position: absolute;
+  left: -18px;
+  top: 0;
+  background-color: transparent;
+  min-width: 5px;
+  height: 80px;
+  transition: 0.5s;
+  user-select: none;
+  writing-mode: vertical-lr;
+  z-index: 5;
+  border-radius: 0px 5px 5px 0;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  padding: 5px 2px;
+  text-align: center;
+  min-width: auto;
+}
+
+.list .item:hover .bar {
+  opacity: 1;
+}
+.list .item .bar:hover {
+  left: 0;
+  color: #fff;
+}
+.list .item .check {
+  border-color: #ddd;
+  width: 15px;
+  height: 15px;
+  filter: hue-rotate(140deg);
+  margin-right: 10px;
+}
+.list .item .title {
+  color: #828282;
+}
+.list .item .time {
+  margin-left: auto;
+  color: #828282;
+  font-size: 14px;
+}
+.add {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #424242eb;
+  position: absolute;
+  z-index: 10;
+  cursor: no-drop;
+  display: none;
+}
+.add .content {
+  border-radius: 50px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  background-color: #fff;
+  padding: 40px;
+  cursor: default;
+}
+.add h2 {
+  text-align: center;
+  color: var(--main-color);
+  margin-bottom: 15px;
+}
+.add span.category {
+  text-align: center;
+  display: block;
+  color: #818181;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+.add form .inline {
+  padding-bottom: 20px;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 20px;
+}
+.add form label {
+  color: var(--main-color);
+  font-size: 17px;
+  width: 115px;
+  display: inline-block;
+}
+.add form input {
+  padding: 10px;
+  background-color: #fbfbfb;
+  border: 1px solid #ddd;
+  box-shadow: inset 0 0 5px 0px #ddd;
+}
+.add form input#inputColor {
+  -webkit-appearance: none;
+  padding: 0;
+  border: none;
+  width: 180px;
+  height: 10px;
+}
+.add form input#inputColor::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+.add form input#inputColor::-webkit-color-swatch {
+  border: none;
+}
+.add form input:focus {
+  outline: none;
+}
+.add form input#inputDate {
+  width: 130px;
+}
+.add form input#inputTime {
+  width: 115px;
+}
+.add .button-holder {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 5px;
+}
+.add .button-holder button {
+  border: none;
+  background-color: var(--main-color);
+  color: #fff;
+  padding: 10px 20px;
+  width: 135px;
+  cursor: pointer;
+  border-radius: 20px;
+  transition: 0.5s;
+}
+.add .button-holder button#createBtn,
+.add .button-holder button#editBtn {
+  order: 1;
+}
+.add .button-holder button#deleteBtn {
+  order: 2;
+}
+.add .button-holder button#cancelBtn {
+  order: 3;
+}
+.add .button-holder button#editBtn,
+.add .button-holder button#deleteBtn {
+  display: none;
+}
+.add button:hover {
+  background-color: var(--main-color-alt) !important;
+}

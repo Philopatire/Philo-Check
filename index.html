@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Philo Check</title>
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="page-holder">
+      <div class="meters">
+        <div class="content"></div>
+      </div>
+      <div class="list">
+        <div class="header">
+          <div class="inline">
+            <span class="day">No List</span>
+            <span class="num-day"></span>
+            <span class="tasks">0</span>
+          </div>
+          <span class="month"></span>
+          <button id="plusTasks"><i class="fa-solid fa-plus"></i></button>
+          <div class="change-day">
+            <button id="prevDay"><i class="fa-solid fa-caret-left"></i></button>
+            <button id="nextDay"><i class="fa-solid fa-caret-right"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="add">
+      <div class="content">
+        <h2>Create New Task!</h2>
+        <span class="category">Category</span>
+        <form>
+          <div class="inline">
+            <label for="inputName">Task Title</label>
+            <input type="text" placeholder="Title" id="inputTitle" />
+          </div>
+          <div class="inline">
+            <label for="inputCategory">Task Category</label>
+            <input type="text" placeholder="Category" id="inputCategory" />
+          </div>
+          <div class="inline">
+            <label for="inputColor">Task Color</label>
+            <input type="color" placeholder="Color" id="inputColor" />
+          </div>
+          <div class="inline">
+            <label for="inputDate">Task Date</label>
+            <input type="date" id="inputDate" maxlength="10" />
+            <input type="time" id="inputTime" maxlength="8" />
+          </div>
+        </form>
+        <div class="button-holder">
+          <button id="editBtn">Edit</button>
+          <button id="createBtn">Create</button>
+          <button id="cancelBtn">Cancel</button>
+          <button id="deleteBtn">Delete</button>
+        </div>
+      </div>
+    </div>
+    <script src="js/index.js"></script>
+  </body>
+</html>
