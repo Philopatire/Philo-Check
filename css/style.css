@@ -144,7 +144,7 @@ span {
   border-bottom: 1px solid #f3f6fa;
   background-color: #fff;
   transition: 0.5s;
-  height: 80px;
+  height: 75px;
 }
 .list .item:hover {
   background-color: #fbfbff;
@@ -157,7 +157,7 @@ span {
   top: 0;
   background-color: transparent;
   min-width: 5px;
-  height: 80px;
+  height: 75px;
   transition: 0.5s;
   user-select: none;
   writing-mode: vertical-lr;
