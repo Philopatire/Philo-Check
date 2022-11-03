@@ -3,7 +3,7 @@
   --main-color-alt: #a11343;
 }
 * {
-  font-family: "Roboto", sans-serif;
+  font-family: "Cairo", sans-serif;
   box-sizing: border-box;
   margin: 0;
 }
@@ -49,7 +49,7 @@ span {
   width: 30%;
   display: flex;
   flex-direction: column;
-  min-width: 350px;
+  min-width: 400px;
   border-radius: 35px 0px 0px 0px;
   height: calc(100vh - 50px);
   max-height: calc(100vh - 50px);
